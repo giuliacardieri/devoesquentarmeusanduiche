@@ -1,0 +1,372 @@
+
+/* nuvens que viram pao */
+.nuvem {
+	background-color: $nuvem;
+  border-radius: 100px;
+  height: 42px;
+  opacity: 0.75;
+  position: absolute;
+  width: 125px;
+  &.chovendo, &.chovendo:after, &.chovendo:before {
+    background-color: $nuvem - 100;
+  }
+  &.tipob {
+    @media (max-width: $xs) {
+      display: none;
+    }
+    &:after {
+      height: 35px;
+      right: 15px;
+      top: -20px;
+      width: 35px;
+    }
+    &:before {
+      height: 60px;
+      right: 19px;
+      top: -30px;
+      width: 60px;
+    }
+  }
+  &:after {
+    background-color: $nuvem;
+    border-radius: 100px;
+    content: '';
+    display: block;
+    height: 55px;
+    position: absolute;
+    right: 15px;
+    top: -34px;
+    width: 55px;
+  }
+  &:before {
+    background-color: $nuvem;
+    border-radius: 100px;
+    content: '';
+    display: block;
+    height: 43px;
+    position: absolute;
+    left: 19px;
+    top: -21px;
+    width: 43px;
+  }
+  @media (max-width: $xs) {
+    height: 17px;
+    width: 50px;
+    &:after {
+      height: 22px;
+      right: 6px;
+      top: -13px;
+      width: 22px;
+    }
+    &:before {
+      height: 17px;
+      left: 7.5px;
+      top: -8px;
+      width: 17px;
+    }
+  }
+}
+
+@for $i from 1 through 10{  
+  .nuvem#{$i}{
+    $delay: random(250)*-1 + s;
+    $speed: random(60) + 120 + s;
+    left: 0;
+    top: random(20) + 35 + px;
+    @include browsers(walkthecloud $speed $delay linear infinite);
+   }
+}
+
+@keyframes walkthecloud {
+  from {left: -20%; }
+  to { left: 120%; }
+}
+  
+@-webkit-keyframes walkthecloud {
+  from {left: -20%; }
+  to { left: 120%; }
+}
+ 
+@-moz-keyframes walkthecloud {
+  from {left: -20%; }
+  to { left: 120%; }
+}
+  
+@-ms-keyframes walkthecloud {
+  from {left: -20%; }
+  to { left: 120%; }
+}
+  
+@-o-keyframes walkthecloud {
+  from {left: -20%; }
+  to { left: 120%; }
+}
+
+/* estrelas da noite */
+.estrelas-wrapper {
+  z-index: 1;
+}
+
+.estrelas{
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  position: absolute;
+}
+
+@for $i from 1 through 350{
+  .s#{$i}{
+    $speed: random(15) + 10 + s;
+    $delay: - (random(25)) + s;
+    $size: random(2) + px;
+    height: $size;
+    left: random(100) + 0%;
+    top: random(100) + 0%;
+    width: $size;
+    @include browsers(shiningStar $speed $delay infinite);
+  }
+}
+
+@-webkit-keyframes shiningStar {
+  0% { opacity: 1; }
+  20% { opacity: 0.5; }
+  40% { opacity: 0; }
+  60% { opacity: 0.5; }
+  80% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes shiningStar {
+  0% { opacity: 1; }
+  20% { opacity: 0.5; }
+  40% { opacity: 0; }
+  60% { opacity: 0.5; }
+  80% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes shiningStar {
+  0% { opacity: 1; }
+  20% { opacity: 0.5; }
+  40% { opacity: 0; }
+  60% { opacity: 0.5; }
+  80% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes shiningStar {
+  0% { opacity: 1; }
+  20% { opacity: 0.5; }
+  40% { opacity: 0; }
+  60% { opacity: 0.5; }
+  80% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+@keyframes shiningStar {
+  0% { opacity: 1; }
+  20% { opacity: 0.5; }
+  40% { opacity: 0; }
+  60% { opacity: 0.5; }
+  80% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+/* ta chovendo kd minha canoa? */
+.chuva-wrapper {
+  overflow: hidden;
+  z-index: 2;
+}
+
+.chuva {
+  background-color: $chuva;
+  height: 7px;
+  opacity: 0.25;
+  position: absolute;
+  width: 1px;
+  z-index: 2;
+}
+
+@for $i from 0 through 500{
+  .chuva-#{$i}{
+      $speed: random(5) + 1 + s;
+      $delay: - (random(100)/random(100)) + s;
+      left: random(100) + 0%;
+      @include browsers(kdcanoa $speed $delay linear infinite);
+  }
+}
+
+@-webkit-keyframes kdcanoa {
+  from { top: -10% }
+  to { top: 110% }
+}
+
+@-moz-keyframes kdcanoa {
+  from { top: -10% }
+  to { top: 110% }
+}
+
+@-ms-keyframes kdcanoa {
+  from { top: -10% }
+  to { top: 110% }
+}
+
+@-o-keyframes kdcanoa {
+  from { top: -10% }
+  to { top: 110% }
+}
+
+@keyframes kdcanoa {
+  from { top: -10% }
+  to { top: 110% }
+}
+
+/* o ceu vira pao */
+.pao, .pao.chovendo{
+	background-color: $pao;
+  border-radius: 80% 90% 80% 85%;
+  height: 50px;
+  position: absolute;
+  width: 125px;
+    @media (max-width: $xs) {
+      height: 20px;
+      width: 50px;                                                                                
+    }
+  &:after, &.tipob:after {
+    background-color: $pao + 30;
+    border-radius: 5% 100% 5% 100%;
+    bottom: 0;
+    box-shadow: 0px 3px 3px ($pao - 20) inset;
+    content: '';
+    display: block;
+    height: 35%;
+    left: 0;
+    margin: auto;
+    opacity: 0.8;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(1deg); 
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    width: 75%;
+  }
+  &:before {
+    display: none;
+  }
+}
+
+/* ônibus e suas animacoes */
+.bg-wrapper .onibus-wrapper {
+  bottom: 47%;
+  position: absolute;
+  z-index: 3;
+  @include browsers(vroomvroom 15s linear infinite);
+  img {
+    width: 100%;
+  }
+}
+
+.roda {
+  background-color: #1b1b1b;
+  border-radius: 100px;
+  bottom: 2px;
+  height: 12px;
+  position: absolute;
+  width: 12px;
+  z-index: 3;
+  @include browsers(gira 0.4s linear infinite);
+  @media (max-width: $xs) {
+    bottom: -18px;
+    height: 10px;
+    width: 10px;
+  }
+  &:after {
+    background-color: #fff;
+    border-radius: 100px;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 6px;
+    left: 0;
+    margin: auto;
+    opacity: 0.2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 6px;
+    @include browsers(gira 0.4s linear infinite);
+    @media (max-width: $xs) {
+      height: 5px;
+      width: 5px;
+    }
+  }
+}
+
+.roda-1 {
+  right: 20px;
+  @media (max-width: $sm) {
+    right: 38px;
+  }
+  @media (max-width: $xs) {
+    right: 50px;
+  }
+}
+
+.roda-2 {
+  left: 23px;
+  @media (max-width: $sm) {
+    left: 3px;
+  }
+  @media (max-width: $xs) {
+    left: -10px;
+  }
+}
+
+/* roda que roda */
+@-webkit-keyframes gira {
+  100% { -webkit-transform: rotate(360deg); } 
+}
+
+@-moz-keyframes gira { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+  
+@-o-keyframes gira { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+  
+@-ms-keyframes gira { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+
+@keyframes gira { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+
+/* ônibus que anda */
+@keyframes vroomvroom {
+  from {left: -20px; }
+  to { left: 100%; }
+}
+
+@-webkit-keyframes vroomvroom {
+  from { left: -20px; }
+  to { left: 110%; } 
+}
+
+@-moz-keyframes vroomvroom {
+  from { left: -20px; }
+  to { left: 110%; }
+}
+  
+@-o-keyframes vroomvroom { 
+  from { left: -20px; }
+  to { left: 110%; } 
+}
+  
+@-ms-keyframes vroomvroom { 
+  from { left: -20px; }
+  to { left: 110%; }
+}

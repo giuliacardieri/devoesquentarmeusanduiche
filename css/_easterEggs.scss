@@ -1,0 +1,36 @@
+.frase {
+  background-color: #eee;
+  border: 1px solid #222;
+  border-radius: 5px;
+  color: #222;
+  font-size: 8pt;
+  padding: 2.5px 5px;
+  position: absolute;
+  left: 16.5%;
+  top: 21%;
+  z-index: 3;
+}
+
+.frase:before {
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid #222;
+  bottom: 5px;
+  content: "";
+  height: 0;
+  left: -7px;
+  position: absolute;
+  width: 0;
+}
+
+.frase:after {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #eee;
+  bottom: 7px;
+  content: "";
+  height: 0;
+  left: -5px;
+  position: absolute;
+  width: 0;
+}

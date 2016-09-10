@@ -1,0 +1,162 @@
+$dia: #5A7495;
+$noite: #181F26;
+$textColor: #eee;
+$nuvem: #f9f9f9;
+$chuva: #e9e9e9;
+$pao: #E0B56E;
+$md: '1024px';
+$sm: '1023px';
+$xs: '787px';
+
+@mixin browsers($info) {
+  animation: $info;
+  -webkit-animation: $info;
+  -moz-animation: $info;
+  -ms-animation: $info;
+  -o-animation: $info;
+}
+
+@import 'animacoes';
+@import 'easterEggs';
+
+body {
+  background-color: $dia;
+  color: $textColor;
+  font-family: helvetica, arial;
+  line-height: 1.6;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.noite {
+  background-color: $noite;
+}
+
+h1 {
+  font-size: 42pt;
+  margin: 0;
+  text-align: center;
+  @media (max-width: $sm) {
+    font-size: 28pt;
+  }
+  @media (max-width: $xs) {
+    font-size: 20pt;
+  }
+}
+
+h2 {
+  font-size: 16pt;
+  margin: 0;
+  text-align: center;
+  @media (max-width: $sm) {
+    font-size: 14pt;
+  }
+  @media (max-width: $xs) {
+    margin-bottom: 5px;
+  }
+}
+
+p {
+  margin: 0;
+  text-align: justify;
+  @media (max-width: $sm) {
+    font-size: 11pt;
+  }
+}
+
+.container {
+  bottom: 0;
+  height: 500px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
+  z-index: 3;
+  @media (max-width: $sm) {
+    height: 400px;
+    width: 65%;
+  }
+  @media (max-width: $xs) {
+    width: 85%;
+  }
+  &::before {
+    background-color: $textColor;
+    border-radius: 5px;
+    content: '';
+    display: block;
+    height: 400px;
+    opacity: 0.15;
+    left: -5%;
+    margin: auto;;
+    position: absolute;
+    top: -10%;
+    width: 110%;
+    @media (max-width: $sm) {
+      height: 350px;
+    }
+    @media (max-width: $xs) {
+      left: -10%;
+      width: 120%;
+    }
+  }
+}
+
+.media {
+  display: inline-block;
+  &.fb {
+    line-height: 10px;
+  }
+}
+
+.btn-wrapper {
+  margin: 2.5% 0;
+  text-align: center;
+}
+
+.bg-wrapper {
+  bottom: -1%;
+  left: 0;
+  position: fixed;
+  width: 110%;
+  @media (max-width: $xs) {
+    width: 120%;
+  }
+  img {
+    position: relative;
+    width: 91%;
+    z-index: 2;
+    &.bg-img {
+      z-index: 4;
+    }
+    &.atras-img {
+      margin-bottom: -3.9%;
+      z-index: 2;
+      @media (max-width: 1130px) {
+        margin-bottom: -4.2%;
+      }
+      @media (max-width: $sm) {
+        margin-bottom: -6%;
+      }
+      @media (max-width: $xs) {
+        margin-bottom: -8%;
+      }
+    }
+    @media (max-width: $sm) {
+      left: -24.5%;
+      width: 141%;    
+    }
+    @media (max-width: $xs) {
+      bottom: -20px;
+      left: -39.5%;
+      width: 161%;    
+    }
+  }
+}
+
+/* helper classes */
+.hidden {
+  display: none;
+}

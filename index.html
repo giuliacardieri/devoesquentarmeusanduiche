@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Devo esquentar meu sanduíche?</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.simpleWeather.min.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49632572-1', 'giuliacardieri.com');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div class="ceu">
+		<div class="estrelas-wrapper hidden"></div>
+			<div class="chuva-wrapper hidden">
+		</div>
+		<div class="nuvem-wrapper hidden">
+		<div class="nuvem nuvem1"></div>
+		<div class="nuvem tipob nuvem2"></div>
+		<div class="nuvem nuvem3"></div>
+		<div class="nuvem tipob nuvem4"></div>
+		<div class="nuvem nuvem5"></div>
+		<div class="nuvem tipob nuvem6"></div>
+		<div class="nuvem nuvem7"></div>
+		<div class="nuvem tipob nuvem8"></div>
+		<div class="nuvem nuvem9"></div>
+		<div class="nuvem tipob nuvem10"></div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="info">
+			<h1 class="temperatura"></h1>
+			<h2 class="nome"></h2>
+			<p class="texto"></p>
+			<div class="btn-wrapper"><!-- 
+				<div class="media">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="ggiulia">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div> -->
+				<div class="media fb">
+					<div class="btn fb-like" data-href="http://giuliacardieri.com/devoesquentarmeusanduiche" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-wrapper">
+		<div class="onibus-wrapper">
+			<img class="onibus" src="images/onibus.png" alt="um ônibus em Bauru" />
+			<div class="roda roda-1"></div>
+			<div class="roda roda-2"></div>
+		</div>
+    <div class="frase hidden"></div>
+		<img class="atras-img" src="images/atras-dia.png" alt="bauru"/>
+		<img class="bg-img"  src="images/bg-dia.png" alt="bauru"/>
+	</div>
+</body>
+</html>
